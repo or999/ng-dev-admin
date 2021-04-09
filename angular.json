@@ -32,7 +32,7 @@
               "node_modules/ng-devui/devui.min.css",
               "node_modules/@devui-design/icons/icomoon/devui-icon.css"
             ],
-            "scripts": []
+            "scripts": ["src/assets/iconfont.js"]
           },
           "configurations": {
             "production": {

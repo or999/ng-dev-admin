@@ -17,22 +17,19 @@ d-header {
 
   .logo {
     position: absolute;
-    left: 0;
-    margin-left: 20px;
+    left: 2%;
     height: 100%;
-    width: 120px;
     color: $devui-light-text;
     font-size: $devui-font-size-icon;
     line-height: 100%;
-
-    .logo-devui {
-      margin-top: 27px;
-    }
-
-    .logo-devui,
+    display: flex;
+    align-items: center;
+    justify-content: center;
     .text {
       display: inline-block;
-      vertical-align: center;
+      font-size: 24px;
+      flex-grow: 1;
+      margin-left: 10px;
     }
   }
 

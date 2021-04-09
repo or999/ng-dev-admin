@@ -6,9 +6,10 @@ import { tap, delay } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  isLogin = false;
+  isLogin = true;
   redirectUrl: string;
   constructor(private router: Router) { }
+  // TODO:模拟登录登出
   login(): Observable<boolean> {
     return of(true).pipe(
       delay(1500),

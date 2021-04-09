@@ -9,10 +9,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PagesModule } from './pages/pages.module';
 import { AuthModule } from './auth/auth.module';
+import { IconComponent } from './shareComponent/icon/icon.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

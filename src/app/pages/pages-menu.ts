@@ -15,72 +15,84 @@ const menu: Array<IMenuType> = [
     title: '首页',
     active: true,
     link: 'dashboard',
-    icon: 'icon-go-chart',
+    icon: 'icon-homepage',
   },
   {
     title: '文档',
-    icon: 'icon-folder-2',
     active: false,
-    children: [
-      { title: '子内容1', active: false, link: 'map' },
-      { title: '子内容2', active: false, link: 'child2' },
-    ],
+    link: 'file',
+    icon: 'icon-file',
   },
   {
+    title: '引导页',
+    active: false,
+    link: 'guard',
+    icon: 'icon-publish',
+  },
+
+
+  {
     title: '权限测试页',
-    icon: 'icon-folder-2',
+    icon: 'icon-lock-private',
     active: false,
     children: [
-      { title: '子内容1', active: false, link: 'x' },
-      { title: '子内容2', active: false, link: 'y' },
+      { title: '页面权限', active: false, link: 'x' },
+      { title: '指令权限', active: false, link: 'y' },
+      { title: '角色权限', active: false, link: 'z' }
     ]
   },
   {
-    title: '图表',
-    icon: 'icon-op-list',
+    title: '图标',
+    icon: 'icon-selct-template',
     active: false,
     link: 'tubiao'
   },
   {
+    title: '组件',
+    icon: 'icon-layout',
+    active: false,
+    children: [
+      { title: '富文本编辑器', active: false, link: 'f' },
+      { title: '小组件', active: false, link: 's' },
+    ],
+  },
+  {
+    title: '图表',
+    icon: 'icon-go-chart',
+    active: false,
+    link: 'tubiao2'
+  },
+  {
     title: '路由嵌套',
-    icon: 'icon-op-list',
+    icon: 'icon-list-view',
     active: false,
     link: 'route'
   },
   {
     title: '表格',
-    icon: 'icon-op-list',
+    icon: 'icon-table',
     active: false,
     link: 'table'
   },
   {
-    title: '404',
-    icon: 'icon-classroom-reject',
+    title: '综合实例',
+    icon: 'icon-for-example',
+    active: false,
+    link: 'example'
+  },
+  {
+    title: '错误页面',
+    icon: 'icon-bug',
     active: false,
     link: 'pagenotfound'
   },
   {
-    title: '',
-    icon: 'icon-loading',
+    title: 'Tab',
+    icon: 'icon-management',
     active: false,
     children: [
       { title: '分组列表', active: false, link: 'grouplist' },
       { title: '任务列表', active: false, link: 'tasklist' },
-    ],
-  },
-  {
-    title: '超级管理员',
-    icon: 'icon-gps',
-    active: false,
-    link: 'superroot'
-  },
-  {
-    title: '事件告警',
-    icon: 'icon-warning-o',
-    active: false,
-    children: [
-      { title: '事件告警', active: false, link: 'warning' },
-      { title: '告警设置', active: false, link: 'wsetting' },
     ],
   }
 ];

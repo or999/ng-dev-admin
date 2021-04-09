@@ -2,9 +2,9 @@
     <d-header>
         <div class="logo">
             <span class="logo-devui">
-                <img [src]="logoSrc" width="50px" height="50px" />
+                <img src="../../assets/angular.png" width="50px" height="auto" />
             </span>
-            <span class="text">ng-admin</span>
+            <span class="text">ng-dev-admin</span>
         </div>
         <div class="message" dDropDown [trigger]="'click'" appendToBody [appendToBodyDirections]="['centerDown']">
             <d-badge count="2" badgePos="top-right" [offsetXY]="[3, 2]">
@@ -25,20 +25,20 @@
                 <li class="disabled" role="menuitem">
                     <a class="devui-dropdown-item disabled">菜单一</a>
                 </li>
-                <li role="menuitem">
+               <!--  <li role="menuitem">
                     <a class="devui-dropdown-item" style="position: relative;">
-                        <!-- <input  
+                        <input  
               type="file"
               id="avatar" name="avatar"
               accept="image/*,.pdf"
               [(ngModel)]="imageInput"
                 (change)="getFile($event,dtoggle)" 
               style="opacity: 0;position: absolute;top: 0;left: 0;width: 100%;height: 100%;"
-            >-->
+            >
                         上传头像
                     </a>
-                </li>
-                <li role="menuitem"><a class="devui-dropdown-item">退出</a></li>
+                </li>-->
+                <li role="menuitem"><a class="devui-dropdown-item" (click)="logout()">退出</a></li>
             </ul>
         </div>
     </d-header>
@@ -69,6 +69,7 @@
             <d-splitter-pane minSize="15%" style="overflow-y: scroll;height: 100%;">
                 <div class="pane-content">
                     <div>
+                        <d-breadcrumb [source]="source"></d-breadcrumb>
                         <router-outlet></router-outlet>
                         <d-toast [value]="msgs"></d-toast>
                     </div>

@@ -7,10 +7,11 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DevUIModule } from 'ng-devui';
 import { FormsModule } from '@angular/forms';
+import { IconComponent } from '../shareComponent/icon/icon.component';
 
 
 @NgModule({
-  declarations: [PagesComponent, PagenotfoundComponent, DashboardComponent],
+  declarations: [PagesComponent, PagenotfoundComponent, DashboardComponent, IconComponent],
   imports: [
     CommonModule,
     PagesRoutingModule,
