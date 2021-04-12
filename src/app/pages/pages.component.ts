@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, NavigationStart, ResolveEnd, Router, RoutesRecognized } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { AuthService } from '../service/auth/auth.service';
@@ -12,8 +12,7 @@ import { menu, IMenuType } from './pages-menu';
 })
 export class PagesComponent implements OnInit {
   // TODO:面包屑数据
-  source: SourceItemType[] = [{ title: '首页', showMenu: false, link: 'pages/dashboard' }];
-  routerChange: Subscription;
+  source: SourceItemType[] = [];
   imgSrc: string;
   imageInput: any;
   constructor(public authService: AuthService, public router: Router, private route: ActivatedRoute) { }
@@ -36,13 +35,9 @@ export class PagesComponent implements OnInit {
   hoverCard: Array<any> = [];
   showCard = false;
   ngOnInit(): void {
-    this.listenRouterChange();
     this.getMenu();
-    if (this.routerChange) {
-      // this.routerChange.unsubscribe();
-    }
-    console.log(this.routerChange);
-
+    this.initBreadcrumb(window.location.pathname);
+    this.listenRouterChange();
   }
   getMenu(): void {
     this.menu = menu;
@@ -73,7 +68,6 @@ export class PagesComponent implements OnInit {
           return child === selectedItem;
         })) {
         item.active = true;
-        // console.log(this.menu);
       } else {
         item.active = false;
       }
@@ -112,11 +106,24 @@ export class PagesComponent implements OnInit {
     return isActive;
   }
   listenRouterChange(): void {
-    this.routerChange = this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((event) => {
-      // console.log(event);
-      // console.log(this.route);
-
-      // this.source.push()
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((event) => {
+      const url = (event as any).url;
+      this.initBreadcrumb(url);
+    });
+  }
+  //
+  initBreadcrumb(url: string): void {
+    this.menu.forEach(item => {
+      if ('/pages/' + item.link === url) {
+        this.source[0] = { title: item.title, link: '/pages/' + item.link, showMenu: false };
+      } else if (item.children && item.children.some(child => '/pages/' + child.link === url)) {
+        this.source[0] = {
+          title: item.title, showMenu: true, noNavigation: true,
+          menuList: item?.children.map((item) => ({ name: item.title, link: '/pages/' + item.link }))
+        };
+      } else {
+        return;
+      }
     });
   }
 }
@@ -124,5 +131,7 @@ export class PagesComponent implements OnInit {
 interface SourceItemType {
   title: string;
   showMenu: boolean;
-  link: string;
+  link?: string;
+  noNavigation?: boolean;
+  menuList?: { name: string, link: string }[];
 }

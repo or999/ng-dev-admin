@@ -13,7 +13,7 @@ interface IMenuType {
 const menu: Array<IMenuType> = [
   {
     title: '首页',
-    active: true,
+    active: false,
     link: 'dashboard',
     icon: 'icon-homepage',
   },
