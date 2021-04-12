@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, NavigationStart, ResolveEnd, Router, RoutesRecognized } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { AuthService } from '../service/auth/auth.service';
@@ -12,7 +12,7 @@ import { menu, IMenuType } from './pages-menu';
 })
 export class PagesComponent implements OnInit {
   // TODO:面包屑数据
-  source: SourceItemType[] = [];
+  source: SourceItemType[] = [{ title: '首页', link: '/pages/dashboard', showMenu: false }];
   imgSrc: string;
   imageInput: any;
   constructor(public authService: AuthService, public router: Router, private route: ActivatedRoute) { }
@@ -115,9 +115,9 @@ export class PagesComponent implements OnInit {
   initBreadcrumb(url: string): void {
     this.menu.forEach(item => {
       if ('/pages/' + item.link === url) {
-        this.source[0] = { title: item.title, link: '/pages/' + item.link, showMenu: false };
+        this.source[1] = { title: item.title, link: '/pages/' + item.link, showMenu: false };
       } else if (item.children && item.children.some(child => '/pages/' + child.link === url)) {
-        this.source[0] = {
+        this.source[1] = {
           title: item.title, showMenu: true, noNavigation: true,
           menuList: item?.children.map((item) => ({ name: item.title, link: '/pages/' + item.link }))
         };
