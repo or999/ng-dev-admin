@@ -26,7 +26,7 @@ const menu: Array<IMenuType> = [
   {
     title: '引导页',
     active: false,
-    link: 'guard',
+    link: 'guide',
     icon: 'icon-publish',
   },
 
@@ -36,9 +36,9 @@ const menu: Array<IMenuType> = [
     icon: 'icon-lock-private',
     active: false,
     children: [
-      { title: '页面权限', active: false, link: 'x' },
-      { title: '指令权限', active: false, link: 'y' },
-      { title: '角色权限', active: false, link: 'z' }
+      { title: '页面权限', active: false, link: 'permission/pagePermission' },
+      { title: '指令权限', active: false, link: 'permission/directivePermission' },
+      { title: '角色权限', active: false, link: 'permission/rolePermission' }
     ]
   },
   {

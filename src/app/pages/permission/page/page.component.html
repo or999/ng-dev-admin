@@ -1,0 +1,8 @@
+
+<section>
+    <d-radio-group [values]="permissionService.roleList" [cssStyle]="'row'" [(ngModel)]="condition" (change)="pagePermission($event)"> </d-radio-group>
+  </section>
+  <p *appPermission="condition" >
+    just  admin can see that!
+   </p>
+   <br>

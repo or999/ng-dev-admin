@@ -126,12 +126,13 @@ export class PagesComponent implements OnInit {
       }
     });
   }
+
 }
 // TODO:面包屑数据类型
-interface SourceItemType {
+type SourceItemType = {
   title: string;
   showMenu: boolean;
   link?: string;
   noNavigation?: boolean;
   menuList?: { name: string, link: string }[];
-}
+};

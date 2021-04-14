@@ -10,10 +10,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PagesModule } from './pages/pages.module';
 import { AuthModule } from './auth/auth.module';
 import { IconComponent } from './shareComponent/icon/icon.component';
+import { PermissionDirective } from './directive/permission/permission.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
+    // PermissionDirective,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,13 @@
+.fileBox{
+    margin: 5% auto;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+a,a:link,a:visited,a:hover,a:active,a:focus {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    border: none;
+}
