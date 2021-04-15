@@ -1,0 +1,18 @@
+<d-tabs [type]="'tabs'" [(activeTab)]="tabActiveId" class="tabs">
+
+    <d-tab id="Icons" title="Icons" tabId="Icons">
+        <ng-template dTabContent>
+            <div class="icon">
+                    <app-icon *ngFor="let it of IconsList" dClipboard [content]="it.html" [iconclass]=" it.title "></app-icon>
+            </div>
+        </ng-template>
+    </d-tab>
+    <d-tab id="devUI Icons" title="devUI Icons" tabId="devUI Icons">
+        <ng-template dTabContent>
+            <div class="icon">
+                <button *ngFor="let it of devIconsList" class="icon {{it.title}}" type="button" dClipboard
+                    [content]="it.html"></button>
+            </div>
+        </ng-template>
+    </d-tab>
+</d-tabs>

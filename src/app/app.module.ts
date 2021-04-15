@@ -9,8 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PagesModule } from './pages/pages.module';
 import { AuthModule } from './auth/auth.module';
-import { IconComponent } from './shareComponent/icon/icon.component';
-import { PermissionDirective } from './directive/permission/permission.directive';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -18,6 +17,7 @@ import { PermissionDirective } from './directive/permission/permission.directive
     // PermissionDirective,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     // DevUIModule,
@@ -25,7 +25,6 @@ import { PermissionDirective } from './directive/permission/permission.directive
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-
     PagesModule,
     AuthModule
   ],

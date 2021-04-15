@@ -45,7 +45,7 @@ const menu: Array<IMenuType> = [
     title: '图标',
     icon: 'icon-selct-template',
     active: false,
-    link: 'tubiao'
+    link: 'icons'
   },
   {
     title: '组件',

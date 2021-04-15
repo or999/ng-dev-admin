@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../guard/auth/auth.guard';
 import { PermissionGuard } from '../guard/permission/permission.guard';
+import { IconsComponent } from './icons/icons.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FileComponent } from './file/file.component';
 import { GuideComponent } from './guide/guide.component';
@@ -46,6 +47,10 @@ const routes: Routes = [
                 canLoad: [PermissionGuard]
               },
             ]
+          },
+          {
+            path: 'icons',
+            component: IconsComponent
           },
           {
             path: '',

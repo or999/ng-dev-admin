@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { AuthService } from '../service/auth/auth.service';
 import { menu, IMenuType } from './pages-menu';
@@ -113,14 +112,18 @@ export class PagesComponent implements OnInit {
   }
   //
   initBreadcrumb(url: string): void {
+    // TODO:初次进入应用时
     this.menu.forEach(item => {
       if ('/pages/' + item.link === url) {
         this.source[1] = { title: item.title, link: '/pages/' + item.link, showMenu: false };
+        // TODO:初次进入应用时根据当前路由点亮目录
+        item.active = true;
       } else if (item.children && item.children.some(child => '/pages/' + child.link === url)) {
         this.source[1] = {
           title: item.title, showMenu: true, noNavigation: true,
           menuList: item?.children.map((item) => ({ name: item.title, link: '/pages/' + item.link }))
         };
+        item.active = true;
       } else {
         return;
       }

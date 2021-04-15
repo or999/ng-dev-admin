@@ -8,17 +8,19 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DevUIModule } from 'ng-devui';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../shareComponent/icon/icon.component';
+import { IconsComponent } from './icons/icons.component';
 import { FileComponent } from './file/file.component';
 import { GuideComponent } from './guide/guide.component';
 import { StepsGuideModule } from 'ng-devui/steps-guide';
 import { PageComponent } from './permission/page/page.component';
 import { RoleComponent } from './permission/role/role.component';
 import { PermissionDirective } from '../directive/permission/permission.directive';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [PagesComponent, PagenotfoundComponent, DashboardComponent, IconComponent,
-    FileComponent, GuideComponent, PageComponent, RoleComponent,
-     PermissionDirective
+    FileComponent, GuideComponent, PageComponent, RoleComponent, IconsComponent,
+    PermissionDirective
   ],
   imports: [
     CommonModule,
