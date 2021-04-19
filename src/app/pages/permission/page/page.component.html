@@ -2,7 +2,16 @@
 <section>
     <d-radio-group [values]="permissionService.roleList" [cssStyle]="'row'" [(ngModel)]="condition" (change)="pagePermission($event)"> </d-radio-group>
   </section>
-  <p *appPermission="condition" >
+  <br>
+  <span>指令权限：</span>
+  <p *appPermission="condition" style="background-color: #e1f0ef;padding: 5px 10px;border-radius: 2px;font-size: 20px;color: cornflowerblue;">
     just  admin can see that!
    </p>
    <br>
+   <p>
+     当切换到
+     <d-tag [tag]="' editor'" [labelStyle]="'aqua-w98'"></d-tag>
+     权限时，不能进入下面的角色权限页面！切换回
+     <d-tag [tag]="'admin'" [labelStyle]="'aqua-w98'"></d-tag>
+     权限可以
+   </p>
