@@ -10,6 +10,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { PagesComponent } from './pages.component';
 import { PageComponent } from './permission/page/page.component';
 import { RoleComponent } from './permission/role/role.component';
+import { RichTextComponent } from './rich-text/rich-text.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,16 @@ const routes: Routes = [
           {
             path: 'icons',
             component: IconsComponent
+          },
+          {
+            path: '',
+            children: [
+              {
+                path: 'richtext',
+                component: RichTextComponent
+              }
+            ]
+
           },
           {
             path: '',

@@ -52,7 +52,7 @@ const menu: Array<IMenuType> = [
     icon: 'icon-layout',
     active: false,
     children: [
-      { title: '富文本编辑器', active: false, link: 'f' },
+      { title: '富文本编辑器', active: false, link: 'richtext' },
       { title: '小组件', active: false, link: 's' },
     ],
   },

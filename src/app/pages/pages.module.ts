@@ -16,18 +16,23 @@ import { PageComponent } from './permission/page/page.component';
 import { RoleComponent } from './permission/role/role.component';
 import { PermissionDirective } from '../directive/permission/permission.directive';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { RichTextComponent } from './rich-text/rich-text.component';
+import { TinymceComponent } from '../shareComponent/tinymce/tinymce.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
 @NgModule({
   declarations: [PagesComponent, PagenotfoundComponent, DashboardComponent, IconComponent,
     FileComponent, GuideComponent, PageComponent, RoleComponent, IconsComponent,
-    PermissionDirective
+    PermissionDirective,
+    RichTextComponent, TinymceComponent
+
   ],
   imports: [
     CommonModule,
     PagesRoutingModule,
     DevUIModule,
     FormsModule,
-    StepsGuideModule
+    StepsGuideModule,
+    EditorModule
   ]
 })
 export class PagesModule { }

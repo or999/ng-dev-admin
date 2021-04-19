@@ -10,11 +10,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PagesModule } from './pages/pages.module';
 import { AuthModule } from './auth/auth.module';
 import { CommonModule } from '@angular/common';
-
+import { EditorModule } from '@tinymce/tinymce-angular';
 @NgModule({
   declarations: [
     AppComponent,
-    // PermissionDirective,
   ],
   imports: [
     CommonModule,
@@ -26,7 +25,9 @@ import { CommonModule } from '@angular/common';
     ReactiveFormsModule,
     HttpClientModule,
     PagesModule,
-    AuthModule
+    AuthModule,
+    EditorModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
