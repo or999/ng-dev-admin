@@ -1,13 +1,65 @@
 .fileBox{
-    margin: 5% auto;
-    width: 50%;
-    display: flex;
+    color:#ffff;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100%;
+    display: grid;
+    margin: 20px 0;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(auto-fill,80px);
+    justify-items: center;
     align-items: center;
-    justify-content: space-around;
 }
+
 a,a:link,a:visited,a:hover,a:active,a:focus {
     text-decoration: none;
     color: inherit;
     display: block;
-    border: none;
+    // border: none;
+}
+a {
+    position: relative;
+    background-color: rgba(0, 0, 0,0.8);
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    margin: 20px;
+    transition: all .4s ease;
+    
+
+}
+a:visited{
+
+}
+a::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+    background-color: rgba(0, 0, 0,0.8);
+
+}
+a::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+    background-color: rgba(0, 0, 0,0.8);
+}
+a:hover::before , a:hover::after{
+    width: 100%; 
+}
+a:hover{
+    background-color: #ffff;
+    color: rgba(0, 0, 0,0.8);
+
 }

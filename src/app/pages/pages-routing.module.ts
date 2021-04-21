@@ -27,6 +27,11 @@ const routes: Routes = [
             component: DashboardComponent
           },
           {
+            path: '',
+            redirectTo: 'dashboard',
+            pathMatch: 'full'
+          },
+          {
             path: 'file',
             component: FileComponent
           },
@@ -62,11 +67,6 @@ const routes: Routes = [
               }
             ]
 
-          },
-          {
-            path: '',
-            redirectTo: 'dashboard',
-            pathMatch: 'full'
           },
           {
             path: '**',

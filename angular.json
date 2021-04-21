@@ -25,14 +25,21 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              { "glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/" },
+              {
+                "glob": "**/*",
+                "input": "src/tinymce/lang",
+                "output": "/tinymce/lang/"
+            }
             ],
             "styles": [
               "src/styles.scss",
               "node_modules/ng-devui/devui.min.css",
               "node_modules/@devui-design/icons/icomoon/devui-icon.css"
+
             ],
-            "scripts": ["src/assets/iconfont.js"]
+            "scripts": ["src/assets/iconfont.js","node_modules/tinymce/tinymce.min.js"]
           },
           "configurations": {
             "production": {
@@ -91,14 +98,20 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              { "glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/" },
+              {
+                "glob": "**/*",
+                "input": "src/tinymce/lang",
+                "output": "/tinymce/lang/"
+            }
             ],
             "styles": [
               "src/styles.scss",
               "node_modules/ng-devui/devui.min.css",
               "node_modules/@devui-design/icons/icomoon/devui-icon.css"
             ],
-            "scripts": []
+            "scripts": ["src/assets/iconfont.js","node_modules/tinymce/tinymce.min.js"]
           }
         },
         "lint": {
