@@ -11,6 +11,8 @@ import { PagesComponent } from './pages.component';
 import { PageComponent } from './permission/page/page.component';
 import { RoleComponent } from './permission/role/role.component';
 import { RichTextComponent } from './rich-text/rich-text.component';
+import { AvatarUploadComponent } from './avatar-upload/avatar-upload.component';
+import { StickyComponent } from './sticky/sticky.component';
 
 const routes: Routes = [
   {
@@ -64,6 +66,14 @@ const routes: Routes = [
               {
                 path: 'richtext',
                 component: RichTextComponent
+              },
+              {
+                path: 'avatarupload',
+                component: AvatarUploadComponent
+              },
+              {
+                path: 'sticky',
+                component: StickyComponent
               }
             ]
 

@@ -7,6 +7,11 @@ interface IMenuType {
     title: string;
     active: boolean;
     link?: string;
+    children?: Array<{
+      title: string;
+      active: boolean;
+      link?: string;
+    }>;
   }>;
   icon?: string;
 }
@@ -53,7 +58,8 @@ const menu: Array<IMenuType> = [
     active: false,
     children: [
       { title: '富文本编辑器', active: false, link: 'richtext' },
-      { title: '小组件', active: false, link: 's' },
+      { title: '文件上传', active: false, link: 'avatarupload' },
+      { title: '吸顶', active: false, link: 'sticky' },
     ],
   },
   {
@@ -92,7 +98,10 @@ const menu: Array<IMenuType> = [
     active: false,
     children: [
       { title: '分组列表', active: false, link: 'grouplist' },
-      { title: '任务列表', active: false, link: 'tasklist' },
+      {
+        title: '任务列表', active: false, children: [{
+          title: '列表', active: false, link: 'list'
+      }] },
     ],
   }
 ];

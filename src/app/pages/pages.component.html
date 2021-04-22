@@ -1,4 +1,4 @@
-<d-layout style="height: 100vh;">
+<d-layout style="height: 100vh;" id="pages">
     <d-header>
         <div class="logo">
             <span class="logo-devui">
@@ -25,7 +25,7 @@
                 <li class="disabled" role="menuitem">
                     <a class="devui-dropdown-item disabled">菜单一</a>
                 </li>
-               <!--  <li role="menuitem">
+                <li role="menuitem">
                     <a class="devui-dropdown-item" style="position: relative;">
                         <input  
               type="file"
@@ -37,12 +37,12 @@
             >
                         上传头像
                     </a>
-                </li>-->
+                </li>
                 <li role="menuitem"><a class="devui-dropdown-item" (click)="logout()">退出</a></li>
             </ul>
         </div>
     </d-header>
-    <d-layout style="height: 100%;overflow-y: scroll;">
+    <d-layout style="height: 100%;overflow-y: auto;">
         <d-splitter class="splitter-border" [orientation]="orientation" [splitBarSize]="splitBarSize"
             [showCollapseButton]="true">
             <d-splitter-pane [shrink]="true" [size]="size" [minSize]="minSize" [maxSize]="maxSize"
@@ -67,9 +67,12 @@
             </d-splitter-pane>
 
             <d-splitter-pane minSize="15%" style="overflow-y: scroll;height: 100%;">
-                <div class="pane-content">
+                <div class="pane-content" #scrollTarget>
                     <div>
-                        <d-breadcrumb [(source)]="source"></d-breadcrumb>
+                        <d-sticky [view]="stickyView" [zIndex]="1000" [scrollTarget]="scrollTarget">
+                                <d-breadcrumb [(source)]="source"></d-breadcrumb>
+                          </d-sticky>
+                       
                         <router-outlet></router-outlet>
                         <d-toast [value]="msgs"></d-toast>
                     </div>

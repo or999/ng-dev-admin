@@ -10,6 +10,10 @@ import { menu, IMenuType } from './pages-menu';
   styleUrls: ['./pages.component.scss']
 })
 export class PagesComponent implements OnInit {
+  stickyView = {
+    top: 0,
+    bottom: 0
+  };
   // TODO:面包屑数据
   source: SourceItemType[] = [{ title: '首页', link: '/pages/dashboard', showMenu: false }];
   imgSrc: string;
@@ -26,11 +30,12 @@ export class PagesComponent implements OnInit {
   disabledBarSize = '1px';
 
   // splitter pane input
-  size = '10%';
+  size = '12%';
   minSize = '8%';
   maxSize = '20%';
   collapsed = false;
   isPaneShrink = false; // 默认不收缩
+
   hoverCard: Array<any> = [];
   showCard = false;
   ngOnInit(): void {
@@ -129,7 +134,11 @@ export class PagesComponent implements OnInit {
       }
     });
   }
+  getFile(event, dToggle): void{
+    console.log(event);
+    console.log(dToggle);
 
+  }
 }
 // TODO:面包屑数据类型
 type SourceItemType = {

@@ -19,11 +19,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RichTextComponent } from './rich-text/rich-text.component';
 import { TinymceComponent } from '../shareComponent/tinymce/tinymce.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { AvatarUploadComponent } from './avatar-upload/avatar-upload.component';
+import { StickyComponent } from './sticky/sticky.component';
 @NgModule({
   declarations: [PagesComponent, PagenotfoundComponent, DashboardComponent, IconComponent,
     FileComponent, GuideComponent, PageComponent, RoleComponent, IconsComponent,
     PermissionDirective,
-    RichTextComponent, TinymceComponent
+    RichTextComponent, TinymceComponent, AvatarUploadComponent, StickyComponent
 
   ],
   imports: [
