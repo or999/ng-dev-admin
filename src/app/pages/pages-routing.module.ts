@@ -13,6 +13,7 @@ import { RoleComponent } from './permission/role/role.component';
 import { RichTextComponent } from './rich-text/rich-text.component';
 import { AvatarUploadComponent } from './avatar-upload/avatar-upload.component';
 import { StickyComponent } from './sticky/sticky.component';
+import { PtableComponent } from './ptable/ptable.component';
 
 const routes: Routes = [
   {
@@ -77,6 +78,10 @@ const routes: Routes = [
               }
             ]
 
+          },
+          {
+            path: 'pages-table',
+            component: PtableComponent
           },
           {
             path: '**',

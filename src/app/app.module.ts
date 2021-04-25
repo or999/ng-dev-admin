@@ -19,7 +19,7 @@ import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
     CommonModule,
     BrowserModule,
     AppRoutingModule,
-    // DevUIModule,
+    DevUIModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,

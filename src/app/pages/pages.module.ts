@@ -21,11 +21,14 @@ import { TinymceComponent } from '../shareComponent/tinymce/tinymce.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { AvatarUploadComponent } from './avatar-upload/avatar-upload.component';
 import { StickyComponent } from './sticky/sticky.component';
+import { PtableComponent } from './ptable/ptable.component';
+import { TableComponent } from '../shareComponent/table/table.component';
+import { TableFormComponent } from '../shareComponent/table-form/table-form.component';
 @NgModule({
   declarations: [PagesComponent, PagenotfoundComponent, DashboardComponent, IconComponent,
     FileComponent, GuideComponent, PageComponent, RoleComponent, IconsComponent,
     PermissionDirective,
-    RichTextComponent, TinymceComponent, AvatarUploadComponent, StickyComponent
+    RichTextComponent, TinymceComponent, AvatarUploadComponent, StickyComponent, TableComponent, PtableComponent, TableFormComponent
 
   ],
   imports: [
