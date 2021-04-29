@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PermissionService } from 'src/app/service/permission/permission.service';
+import { PermissionService } from 'src/app/@core/service/permission/permission.service';
 
 @Component({
   selector: 'app-page',

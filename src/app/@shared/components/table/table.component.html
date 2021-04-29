@@ -1,21 +1,21 @@
-<d-button bsStyle="primary" (click)="openPreventCloseModal()" style="float: right;">添加</d-button>
-<br>
+<div style="display: grid;grid-template-columns: 25% 25% 20% 20% ;width: 50%;justify-items: center;align-items: center;margin: 15px;">
+  <d-select [placeholder]="'灯具名称'" [filterKey]="'name'" [(ngModel)]="currentOption1" [searchFn]="onSelectObject"
+    [isSearch]="true" [searchPlaceholder]="'搜索我的选项'">
+  </d-select>
+  <d-select [placeholder]="'灯具类型'" [allowClear]="true" [options]="options" [filterKey]="'name'" [(ngModel)]="currentOption2" [searchPlaceholder]="'搜索我的选项'">
+  </d-select>
+  <d-button bsStyle="primary" style="float: right;">导出</d-button>
+  <d-button bsStyle="primary" (click)="openPreventCloseModal()" style="float: right;">添加</d-button>
+</div>
 <d-data-table [dataSource]="basicDataSource" [tableWidthConfig]="tableWidthConfig" style="text-align: center;"
-  lazy="true" (loadMore)="loadMore($event)" 
-  dLoading [showLoading]="showLoading" 
-  scrollable="true" 
-  maxHeight="400px" 
-  [fixHeader]="true" 
-  [tableLayout]="'auto'"
-  [colDraggable]="true" 
-  [colDropFreezeTo]="2"
-  >
-  <thead dTableHead [checkable]="true" [checkOptions]="checkOptions" >
+  lazy="true" (loadMore)="loadMore($event)" dLoading [showLoading]="showLoading" scrollable="true" maxHeight="400px"
+  [fixHeader]="true" [tableLayout]="'auto'" [hideColumn]="hideColumn">
+  <thead dTableHead [checkable]="true" [checkOptions]="checkOptions">
     <tr dTableRow>
-      <th dHeadCell>#</th>
+      <th dHeadCell   >#</th>
       <th dHeadCell *ngFor="let colOption of dataTableOptions.columns" style="text-align: center;">
         {{ colOption.header }}</th>
-        <th dHeadCell style="text-align: center;">操作</th>
+      <th dHeadCell style="text-align: center;">操作</th>
     </tr>
   </thead>
   <tbody dTableBody>
@@ -50,7 +50,10 @@
             </p>
           </span>
         </td>
-        <td dTableCell><d-button bsStyle="primary" (click)="edit(rowItem)">编辑</d-button><d-button bsStyle="danger" (click)="delete(rowItem)">删除</d-button></td>
+        <td dTableCell>
+          <d-button bsStyle="primary" (click)="edit(rowItem)">编辑</d-button>
+          <d-button bsStyle="danger" (click)="delete(rowItem)">删除</d-button>
+        </td>
       </tr>
     </ng-template>
   </tbody>

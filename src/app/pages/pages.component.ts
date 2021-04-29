@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
-import { AuthService } from '../service/auth/auth.service';
+import { AuthService } from '../@core/service/auth/auth.service';
 import { menu, IMenuType } from './pages-menu';
 
 @Component({

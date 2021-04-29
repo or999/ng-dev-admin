@@ -69,9 +69,10 @@
             <d-splitter-pane minSize="15%" style="overflow-y: scroll;height: 100%;">
                 <div class="pane-content" #scrollTarget>
                     <div>
-                        <d-sticky [view]="stickyView" [zIndex]="1000" [scrollTarget]="scrollTarget">
-                                <d-breadcrumb [(source)]="source"></d-breadcrumb>
-                          </d-sticky>
+                        <!-- TODO:吸顶效果 -->
+                        <!-- <d-sticky [view]="stickyView" [zIndex]="1000" [scrollTarget]="scrollTarget"> -->
+                                <d-breadcrumb [(source)]="source" class="breadcrumb"></d-breadcrumb>
+                          <!-- </d-sticky> -->
                        
                         <router-outlet></router-outlet>
                         <d-toast [value]="msgs"></d-toast>

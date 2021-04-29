@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ChangeDetectorRef, ViewEncapsulation } fr
 import { Router } from '@angular/router';
 import { TableWidthConfig, TableCheckOptions, DataTableComponent } from 'ng-devui/data-table';
 import { DialogService } from 'ng-devui/modal';
+import { of } from 'rxjs';
 import { TableFormComponent } from '../table-form/table-form.component';
 
 @Component({
@@ -75,7 +76,7 @@ export class TableComponent implements OnInit {
     },
     {
       field: 'light',
-      width: '250px'
+      width: '300px'
     },
     {
       field: 'address',
@@ -83,10 +84,10 @@ export class TableComponent implements OnInit {
     },
     {
       field: 'todo',
-      width: '100px'
+      width: ''
     },
   ];
-
+  hideColumn = ['address'];
   checkOptions: TableCheckOptions[] = [
     {
       label: '全选所有数据',
@@ -97,6 +98,25 @@ export class TableComponent implements OnInit {
       onChecked: this.checkPageData.bind(this)
     }
   ];
+  options = [{
+    name: 'option1',
+    value: 1
+  }, {
+    name: 'option2',
+    value: 2
+  }, {
+    name: 'option3',
+    value: 3
+  }, {
+    name: 'option4',
+    value: 4
+  }, {
+    name: 'option5',
+    value: 5
+  }, {
+    name: 'option6',
+    value: 6
+  }];
   pager = {
     total: 12,
     pageIndex: 1,
@@ -108,6 +128,8 @@ export class TableComponent implements OnInit {
   next = 1;
   total = 40;
   complete = false;
+  currentOption1 = '';
+  currentOption2 = '';
   ngOnInit(): void {
   }
   // TODO:mock懒加载数据
@@ -276,6 +298,13 @@ export class TableComponent implements OnInit {
         return;
       }
     });
+  }
+  onSelectObject = (term) => {
+    return of(
+      this.options
+        .map((option, index) => ({ id: index, option }))
+        .filter(item => item.option.name.toLowerCase().indexOf(term.toLowerCase()) !== -1)
+    );
   }
 }
 interface SourceType {

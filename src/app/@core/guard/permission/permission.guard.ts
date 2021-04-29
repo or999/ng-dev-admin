@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, CanActivateChild, CanLoad, Route, UrlSegment, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import { PermissionService } from 'src/app/service/permission/permission.service';
+import { PermissionService } from '../../service/permission/permission.service';
 
 @Injectable({
   providedIn: 'root'

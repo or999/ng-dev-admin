@@ -4,33 +4,25 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DevUIModule } from 'ng-devui';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { PagesModule } from './pages/pages.module';
 import { AuthModule } from './auth/auth.module';
 import { CommonModule } from '@angular/common';
-import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
+import { SharedModule } from './@shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
-    CommonModule,
     BrowserModule,
-    AppRoutingModule,
-    DevUIModule,
     BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule,
     HttpClientModule,
-    PagesModule,
-    AuthModule,
-    EditorModule
+    AppRoutingModule,
+    SharedModule.forRoot()
 
   ],
   providers: [
-    // { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }
   ],
   bootstrap: [AppComponent]
 })

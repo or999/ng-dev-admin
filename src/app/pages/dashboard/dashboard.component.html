@@ -1,12 +1,6 @@
-<div style="width: 100%;height: auto;padding: 10px 0;">
-  <div style="display: flex;">
-    <div id="main2" style="height: 400px;width:400vw;margin:10px;background-color: #ffff;padding: 15px;box-shadow: #f0f2f5 8px 8px 10px;">
-    </div>
-    <div id="main3" style="height: 400px;width:400vw;margin:10px;background-color: #ffff;float: right;padding: 15px;box-shadow: #f0f2f5 8px 8px 10px;">
-    </div>
-  </div>
-  
-     <div id="main1" style="height: 400px;width:80vw;margin:10px auto;background-color: #ffff;padding: 15px;box-shadow: #f0f2f5 8px 8px 10px;">
-     </div>
-  
+<div class="echarts-box">
+  <app-echarts [height]="'400px'" [width]="'100%'" [option]="option2" class="echart" ></app-echarts>
+  <app-echarts [height]="'400px'" [width]="'100%'" [option]="option3" class="echart"></app-echarts>
+  <app-echarts [height]="'400px'" [width]="'100%'" [option]="option4" class="echart"></app-echarts>
+  <app-echarts [height]="'400px'" [width]="'100%'" [option]="option1" class="echart"></app-echarts>
 </div>

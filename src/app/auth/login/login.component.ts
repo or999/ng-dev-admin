@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { delay } from 'rxjs/operators';
-import { AuthService } from 'src/app/service/auth/auth.service';
+import { AuthService } from 'src/app/@core/service/auth/auth.service';
 
 @Component({
   selector: 'app-login',

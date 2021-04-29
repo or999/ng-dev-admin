@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from '../guard/auth/auth.guard';
-import { PermissionGuard } from '../guard/permission/permission.guard';
 import { IconsComponent } from './icons/icons.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FileComponent } from './file/file.component';
@@ -14,6 +12,8 @@ import { RichTextComponent } from './rich-text/rich-text.component';
 import { AvatarUploadComponent } from './avatar-upload/avatar-upload.component';
 import { StickyComponent } from './sticky/sticky.component';
 import { PtableComponent } from './ptable/ptable.component';
+import { AuthGuard } from '../@core/guard/auth/auth.guard';
+import { PermissionGuard } from '../@core/guard/permission/permission.guard';
 
 const routes: Routes = [
   {
