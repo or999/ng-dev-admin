@@ -1,2 +1,35 @@
-<h1>login works!</h1>
-<d-button (click)="login()" *ngIf="!authService.isLogin">登录</d-button>
+<d-toast [value]="msgs"></d-toast>
+<div class="login-form">
+<h1 > 登录</h1>
+
+    <form dForm [layout]="'vertical'" ngForm [dValidateRules]="formRules.rule" #userForm="dValidateRules"
+        (dSubmit)="submitForm($event)">
+        <d-form-item>
+            <d-form-label [required]="true" [hasHelp]="true" [helpTips]="'这是用户名，必填'">用户名：</d-form-label>
+            <d-form-control>
+                <div>
+                    <input dTextInput autocomplete="off" name="userName" maxlength="10" minlength="3"
+                        [(ngModel)]="formData.userName" [dValidateRules]="formRules.usernameRules" />
+                </div>
+            </d-form-control>
+        </d-form-item>
+
+        <d-form-item>
+            <d-form-label [required]="true" [hasHelp]="true" [helpTips]="'这是密码，必填'">密码</d-form-label>
+            <d-form-control>
+                <div>
+                    <input dTextInput type="password" autocomplete="off" name="passWord" maxlength="15" minlength="6"
+                        placeholder="请设置6-15位密码" [(ngModel)]="formData.passWord"
+                        [dValidateRules]="formRules.passwordRules" />
+                </div>
+            </d-form-control>
+        </d-form-item>
+        <d-form-operation >
+            <d-button [title]="userForm.errorMessage || ''" circled="true" *ngIf="!authService.isLogin" dFormSubmit style="margin-right: 10px;">登录
+            </d-button>
+            <d-button bsStyle="common" circled="true" dFormReset>重置</d-button>
+        </d-form-operation>
+
+    </form>
+
+</div>

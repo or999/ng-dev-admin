@@ -6,7 +6,7 @@ import { tap, delay } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  isLogin = true;
+  isLogin = false;
   redirectUrl: string;
   constructor(private router: Router) { }
   // TODO:模拟登录登出
